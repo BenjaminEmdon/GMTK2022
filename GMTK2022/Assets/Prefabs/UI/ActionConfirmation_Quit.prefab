@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975666485652185409, guid: 370b948e6ed22e147b7bdc76993b2ac5, type: 3}
       propertyPath: m_fontSize
-      value: 60
+      value: 50.25
       objectReference: {fileID: 0}
     - target: {fileID: 8771166171522644685, guid: 370b948e6ed22e147b7bdc76993b2ac5, type: 3}
       propertyPath: m_Pivot.x
@@ -147,6 +147,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2638041808289330509, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -29.0093
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638041808289330509, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -231.5002
+      objectReference: {fileID: 0}
     - target: {fileID: 3826698517694026245, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
       propertyPath: m_Name
       value: B_Desktop
@@ -154,6 +162,10 @@ PrefabInstance:
     - target: {fileID: 3905173425326416042, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
       propertyPath: m_text
       value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905173425326416042, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
+      propertyPath: m_fontSize
+      value: 50.25
       objectReference: {fileID: 0}
     - target: {fileID: 4925776233553883150, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
       propertyPath: m_AnchorMax.y
@@ -221,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6002713512747772802, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
       propertyPath: m_fontSize
-      value: 60
+      value: 50.25
       objectReference: {fileID: 0}
     - target: {fileID: 6851137102287098047, guid: 60efcac8cd5eee047a55eead7a5718de, type: 3}
       propertyPath: m_Pivot.x
