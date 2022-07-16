@@ -19,7 +19,7 @@ public class InitiateSide : MonoBehaviour
 
         FaceDetectorRef = GameObject.Find("PlayerFaceDetector");
         FaceBox = FaceDetectorRef.GetComponent<BoxCollider>();
-        
+
         SelfCollider = GetComponent<BoxCollider>();
     }
 
@@ -30,8 +30,13 @@ public class InitiateSide : MonoBehaviour
     
     }
 
-    private void OnTriggerEntered(Collider SelfCollider, Collider Facebox)
+    private void OnTriggerEnter(Collider other)
     {
-        PlayerDiceRef.attackToUse = attack;
+        if(other == FaceBox)
+        {
+            PlayerDiceRef.attackToUse = attack;
+        }
+    
     }
 }
+
