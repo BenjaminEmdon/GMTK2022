@@ -6,12 +6,14 @@ public class EPlayerAttacks : MonoBehaviour
 {
   public enum Attacks
   {
+    Null,
     Hit,
     Miss,
     DoubleHit,
-    QuadHit,
-    HitAll,
-    DoubleHitAll,
-    Heal
+    TripleHit,
+    Bomb,
+    Heal,
+    HealTwice,
+    HealThrice
     }
 }
