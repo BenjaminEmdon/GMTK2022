@@ -13,6 +13,5 @@ public class EPlayerAttacks : MonoBehaviour
     HitAll,
     DoubleHitAll,
     Heal
- 
-}
+    }
 }
