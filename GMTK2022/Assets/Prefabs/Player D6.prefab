@@ -297,7 +297,14 @@ MonoBehaviour:
   - {fileID: 6108974594425177165}
   - {fileID: 2234532418497814975}
   - {fileID: 1650507106312453526}
-  red: {fileID: 2100000, guid: 2f059734a1a1b89499f83a1cb10cd7cb, type: 2}
+  diceTextures:
+  - {fileID: 2100000, guid: 2f059734a1a1b89499f83a1cb10cd7cb, type: 2}
+  - {fileID: 2100000, guid: 667a4e11d338cf24e9288187bb885dc3, type: 2}
+  - {fileID: 2100000, guid: a308c804deca74540a26083ebb228211, type: 2}
+  - {fileID: 2100000, guid: 2e8cbfe78f8f0e747a7b24a1175dcc47, type: 2}
+  - {fileID: 2100000, guid: e7ec5a12ca6ca074d9b09ecca161f4f9, type: 2}
+  - {fileID: 2100000, guid: 2f059734a1a1b89499f83a1cb10cd7cb, type: 2}
+  materialToAdd: {fileID: 0}
 --- !u!54 &5894659486663451868
 Rigidbody:
   m_ObjectHideFlags: 0

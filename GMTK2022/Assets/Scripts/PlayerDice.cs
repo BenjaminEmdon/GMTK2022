@@ -5,17 +5,23 @@ using UnityEngine;
 public class PlayerDice : MonoBehaviour
 {
     [SerializeField] private GameObject[] diceFaces;
-    public Material red;
+    public Material[] diceTextures;
+    private Material[] texturesAdded;
+    public Material materialToAdd;
+    private int i = 0;
     // Start is called before the first frame update
     void Start()
     {
-       
+        
+
        foreach (GameObject Face in diceFaces) 
        {
-           Face.GetComponent<Renderer>().material = red;
+           print(i);
+           materialToAdd = diceTextures[i]; 
+           Face.GetComponent<Renderer>().material = materialToAdd;
+           i++;
            
        }
-        
     
     }
 
