@@ -34,15 +34,15 @@ public static class PauseManager
     {
         paused = value;
 
-        onPauseValueChanged.Invoke(value);
+        onPauseValueChanged?.Invoke(value);
 
         if (value)
         {
-            onPause.Invoke();
+            onPause?.Invoke();
         }
         else
         {
-            onUnpause.Invoke();
+            onUnpause?.Invoke();
         }
     }
 }
