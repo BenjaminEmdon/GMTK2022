@@ -33,6 +33,6 @@ public float runSpeed = 20.0f;
             x *= moveLimiter;
             z *= moveLimiter;
         }
-        body.velocity = new Vector3(x * runSpeed, 0, z *runSpeed);
+        body.velocity = new Vector3(x * runSpeed, 0, z * runSpeed);
     }
 }
