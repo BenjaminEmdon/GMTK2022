@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2334227337174055982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 238.1, z: -89}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e7ec5a12ca6ca074d9b09ecca161f4f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,11 +140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8561123cbdd6a049a7af961f16060a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waittime: 5
-  currentAttackList:
+  currentAttackTextures:
   - {fileID: 2100000, guid: e7d3697604eb8bd45b8c5a1badeef2fd, type: 2}
   - {fileID: 2100000, guid: fa7f583b33f332d4d9e9c4b6084a7b62, type: 2}
+  - {fileID: 2100000, guid: df176b0bd6132cd4e86c90829bc17d84, type: 2}
+  - {fileID: 2100000, guid: 1b0fb2a0afd10094e9a433985a2faa9b, type: 2}
+  - {fileID: 2100000, guid: e443ded06799e2a4b97982b215e5bc8f, type: 2}
   - {fileID: 2100000, guid: b90f0ee5a26904145b5964e9aef2f9b5, type: 2}
-  - {fileID: 2100000, guid: b90f0ee5a26904145b5964e9aef2f9b5, type: 2}
-  - {fileID: 2100000, guid: b90f0ee5a26904145b5964e9aef2f9b5, type: 2}
-  - {fileID: 2100000, guid: b90f0ee5a26904145b5964e9aef2f9b5, type: 2}
+  - {fileID: 2100000, guid: eedbd107c60f049438fd26d782aa2100, type: 2}
+  - {fileID: 2100000, guid: 5076630f76ec63040960b40a744099b1, type: 2}
+  currentAttacks: 010000000100000006000000030000000200000002000000
