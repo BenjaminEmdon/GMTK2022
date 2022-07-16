@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private int Waittime = 5;
     private bool waiting = false;
-
+    public Material[] currentAttackList;
     // Start is called before the first frame update
     void Start()
     {
