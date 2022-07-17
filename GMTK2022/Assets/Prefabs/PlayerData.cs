@@ -7,6 +7,6 @@ public class PlayerData : ScriptableObject
 {
 
     public EPlayerAttacks.Attacks[] attackList;
-    
+    public int nextLevel=1;
     
 }

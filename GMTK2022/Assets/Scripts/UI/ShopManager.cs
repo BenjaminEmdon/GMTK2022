@@ -7,10 +7,11 @@ public class ShopManager : MonoBehaviour
 {
     public EPlayerAttacks.Attacks[] currentAttackList;
     private int i=0;
+    private int ii=0;
     private EPlayerAttacks.Attacks[] newAttacksOffered;
     private int attackToOffer;
-    private EPlayerAttacks.Attacks newAttack;
-    private EPlayerAttacks.Attacks attackRemoved;
+    public EPlayerAttacks.Attacks newAttack;
+    public EPlayerAttacks.Attacks attackRemoved;
     public PlayerData playerDice;
     [SerializeField] private GameObject[] currentDice;
     [SerializeField] private Sprite[] DiceSprites;
@@ -97,5 +98,23 @@ public class ShopManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Finish()
+    {
+        foreach (var atack in playerDice.attackList)
+        {
+           if(playerDice.attackList[ii] == attackRemoved) 
+           {
+                playerDice.attackList[ii] = newAttack;
+                break;
+           }
+           else
+           {
+                ii++;
+           }
+    
+        }
+        Debug.Log(newAttack);
     }
 }
