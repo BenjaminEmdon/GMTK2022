@@ -44,4 +44,6 @@ public class EEnemyAttacks : MonoBehaviour
     //using an enum so it's easier to create specific attacks for enemies and special abilities, I would assume there is a much better way 
     //than doing this with ints or dictionaries or something
     // the only one which will be awkward is D20 tho, the others have barely any attacks anyway
+
+    // "wow you guys should add a 100 sided dice!!" -some guy in the future, probably
 }

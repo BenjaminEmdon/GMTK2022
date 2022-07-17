@@ -56,7 +56,7 @@ public class Dye : MonoBehaviour
         hasJustPerformedAbility = true;
     }
 
-    protected virtual IEnumerator DelayFaceAbility(int delayTime)
+    protected virtual IEnumerator DelayFaceAbility(float delayTime)
     {
         //Debug.Log($"{name}: Waiting to perform Face Ability.", this);
         waitingToPerformAbility = true;
