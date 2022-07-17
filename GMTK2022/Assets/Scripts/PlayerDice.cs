@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class PlayerDice : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class PlayerDice : MonoBehaviour
     private EPlayerAttacks.Attacks attackToGive;
 
     public EPlayerAttacks.Attacks attackToUse;
+
+    [SerializeField]
+    private LayerMask targetLayerMask;
 
     [Header("Projectile Data")]
     [SerializeField]
@@ -179,10 +183,10 @@ public class PlayerDice : MonoBehaviour
         if (projMvm != null)
         {
             // calculate direction to nearest enemy
-            //Vector3 dir = 
+            Vector3 dir = (FindClosestObject.Find(proj.transform.position, 50.0f, targetLayerMask).transform.position - proj.transform.position).normalized;
 
             // set variables from ProjectileData scriptable object
-            projMvm.Initialise(hitProjectileData.damage, Vector3.left, hitProjectileData.speed, hitProjectileData.lifespan, hitProjectileData.collisionLayers);
+            projMvm.Initialise(hitProjectileData.damage, dir, hitProjectileData.speed, hitProjectileData.lifespan, hitProjectileData.collisionLayers);
         }
     }
 
@@ -220,13 +224,6 @@ public class PlayerDice : MonoBehaviour
     {
         SceneManager.LoadScene("DiceTrading");
     }
-
-    /*
-    private GameObject FindNearestEnemy()
-    {
-
-    }
-    */
 }
 
  
