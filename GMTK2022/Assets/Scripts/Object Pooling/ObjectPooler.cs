@@ -7,12 +7,17 @@ public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler s_Instance;
 
-    [Header("Pooled Obj Information")]
-    private List<GameObject> pooledObjs = new List<GameObject>();
-    [SerializeField]
-    private GameObject objToPool;
-    [SerializeField]
-    private int poolSize;
+    [System.Serializable]
+    public struct Pool
+    {
+        public string tag;
+        public GameObject obj;
+        public int size;
+    }
+
+    public List<Pool> pools = new List<Pool>();
+    public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();      // Dictionary of pools associating GameObjects with tags
+
 
     private void Awake()
     {
@@ -26,21 +31,29 @@ public class ObjectPooler : MonoBehaviour
             s_Instance = this;
         }
 
-        if (objToPool == null || poolSize <= 0)
-            return;
-
-        for (int i = 0; i < poolSize; i++)
+        // Instantiate object pools
+        for (int i = 0; i < pools.Count; i++)
         {
-            GameObject obj = Instantiate(objToPool, transform);
-            obj.name = $"{objToPool.name} [{i + 1}]";
-            obj.SetActive(false);
-            pooledObjs.Add(obj);
+            Queue<GameObject> pool = new Queue<GameObject>();
+            for (int j = 0; j < pools[i].size; j++)
+            {
+                GameObject obj = Instantiate(pools[i].obj, transform);
+                obj.name = $"{pools[i].obj.name} [{j + 1}]";
+                obj.SetActive(false);
+                pool.Enqueue(obj);
+            }
+
+            poolDictionary.Add(pools[i].tag, pool);
         }
     }
 
-    public GameObject SpawnObjectFromPool()
+    public GameObject SpawnObjectFromPool(string tag)
     {
-        GameObject objToSpawn = GetPooledObject();
+        GameObject objToSpawn = GetPooledObject(tag);
+
+        if (objToSpawn == null)
+            return null;
+
         objToSpawn.SetActive(true);
 
         IPooledObject pooledObj = objToSpawn.GetComponent<IPooledObject>();
@@ -49,18 +62,22 @@ public class ObjectPooler : MonoBehaviour
             pooledObj.OnObjectSpawn();
         }
 
+        poolDictionary[tag].Enqueue(objToSpawn);
+
         return objToSpawn;
     }
 
-    public GameObject GetPooledObject()
+    public GameObject GetPooledObject(string tag)
     {
-        for (int i = 0; i < poolSize; i++)
+        // Check if tag exists within our dictionary of pools
+        if (!poolDictionary.ContainsKey(tag))
         {
-            if (!pooledObjs[i].activeInHierarchy)
-            {
-                return pooledObjs[i];
-            }
+            Debug.LogWarning($"Object Pool with tag {tag} could not be found!", this);
+            return null;
         }
-        return null;
+        else
+        {
+            return poolDictionary[tag].Dequeue();
+        }
     }
 }
