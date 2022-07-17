@@ -108,8 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialApplied: {fileID: 0}
-  attack: 0
+  dye: {fileID: 5977430347483075599}
+  playerAttack: 0
+  enemyAttack: 0
 --- !u!1 &2234532418497814975
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,8 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialApplied: {fileID: 0}
-  attack: 0
+  dye: {fileID: 5977430347483075599}
+  playerAttack: 0
+  enemyAttack: 0
 --- !u!1 &2309779894391319131
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialApplied: {fileID: 0}
-  attack: 0
+  dye: {fileID: 5977430347483075599}
+  playerAttack: 0
+  enemyAttack: 0
 --- !u!1 &3248487310564752031
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +388,10 @@ MonoBehaviour:
   - {fileID: 6108974594425177165}
   - {fileID: 2234532418497814975}
   - {fileID: 1650507106312453526}
+  delayTime: 1
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   diceTextures:
   - {fileID: 2100000, guid: e7d3697604eb8bd45b8c5a1badeef2fd, type: 2}
   - {fileID: 2100000, guid: fa7f583b33f332d4d9e9c4b6084a7b62, type: 2}
@@ -394,12 +401,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: b90f0ee5a26904145b5964e9aef2f9b5, type: 2}
   - {fileID: 2100000, guid: 2f059734a1a1b89499f83a1cb10cd7cb, type: 2}
   - {fileID: 2100000, guid: 667a4e11d338cf24e9288187bb885dc3, type: 2}
-  materialToAdd: {fileID: 0}
   playerAttack: {fileID: 0}
   attackToUse: 0
-  targetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   hitProjectileData: {fileID: 11400000, guid: 621f2e21e58bb3b43b2ca0634b6103bc, type: 2}
 --- !u!54 &5894659486663451868
 Rigidbody:
@@ -538,8 +541,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialApplied: {fileID: 0}
-  attack: 0
+  dye: {fileID: 5977430347483075599}
+  playerAttack: 0
+  enemyAttack: 0
 --- !u!1 &5512251372717653345
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,8 +652,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialApplied: {fileID: 0}
-  attack: 0
+  dye: {fileID: 5977430347483075599}
+  playerAttack: 0
+  enemyAttack: 0
 --- !u!1 &6108974594425177165
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,8 +763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialApplied: {fileID: 0}
-  attack: 0
+  dye: {fileID: 5977430347483075599}
+  playerAttack: 0
+  enemyAttack: 0
 --- !u!1 &7034246987143604902
 GameObject:
   m_ObjectHideFlags: 0

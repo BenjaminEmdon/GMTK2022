@@ -93,11 +93,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854275afad6a3ac4e906bbc741628123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
+  rigidBody: {fileID: 3316780720565015532}
   diceFaces: []
   delayTime: 1
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   data: {fileID: 0}
+  projData: {fileID: 11400000, guid: 58740362d45adfd4da91a7b6cfd685ae, type: 2}
+  attack: 0
   moveDelay: 3
