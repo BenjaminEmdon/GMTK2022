@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872b98240d85b6149b84d72893a9cb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  rigidBody: {fileID: 5894659486663451868}
   diceFaces:
   - {fileID: 5512251372717653345}
   - {fileID: 2309779894391319131}
@@ -395,8 +395,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2f059734a1a1b89499f83a1cb10cd7cb, type: 2}
   - {fileID: 2100000, guid: 667a4e11d338cf24e9288187bb885dc3, type: 2}
   materialToAdd: {fileID: 0}
-  playerAttackRef: {fileID: 0}
-  playerRef: {fileID: 0}
+  playerAttack: {fileID: 0}
   attackToUse: 0
   targetLayerMask:
     serializedVersion: 2
