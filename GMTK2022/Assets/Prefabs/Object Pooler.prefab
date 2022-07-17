@@ -43,5 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76a8a00b1822fa48b8136f1c17daadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToPool: {fileID: 147151778634400087, guid: eb3ed4af7d24e1d4089d27d506bc86f8, type: 3}
-  poolSize: 40
+  pools:
+  - tag: 
+    obj: {fileID: 0}
+    size: 0
+  - tag: Player Hit Projectile
+    obj: {fileID: 147151778634400087, guid: eb3ed4af7d24e1d4089d27d506bc86f8, type: 3}
+    size: 20

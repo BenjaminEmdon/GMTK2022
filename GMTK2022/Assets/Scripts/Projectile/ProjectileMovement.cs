@@ -25,6 +25,7 @@ public class ProjectileMovement : MonoBehaviour, IPooledObject
         collisionLayers = _collisionLayers;
 
         rb.velocity = dir * speed * Time.fixedDeltaTime * 100.0f;
+        StartCoroutine(DeathTimer());
     }
 
     protected virtual void OnTriggerEnter(Collider other)

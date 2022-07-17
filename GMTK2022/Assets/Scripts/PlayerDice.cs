@@ -172,7 +172,7 @@ public class PlayerDice : MonoBehaviour
 
     void ATKHit()
     {
-        GameObject proj = ObjectPooler.s_Instance.SpawnObjectFromPool();
+        GameObject proj = ObjectPooler.s_Instance.SpawnObjectFromPool("Player Hit Projectile");
         proj.transform.position = transform.position;
 
         ProjectileMovement projMvm = proj.GetComponent<ProjectileMovement>();
