@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerDice : Dye
+public class PlayerDye : Dye
 {
     public Material[] diceTextures;
 
