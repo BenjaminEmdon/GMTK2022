@@ -8,15 +8,11 @@ public class LevelManager : MonoBehaviour
    [SerializeField] public int levelNumber;
    
    public PlayerData playerDataRef;
-   public EPlayerAttacks.Attacks[] startingAttacks;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(levelNumber == 1)
-        {
-            playerDataRef.attackList = startingAttacks;
-        }
+        
     }
 
     // Update is called once per frame

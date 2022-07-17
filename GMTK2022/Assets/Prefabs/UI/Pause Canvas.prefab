@@ -404,6 +404,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -35.77112
       objectReference: {fileID: 0}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: fa295329ec1094c4093b6753dacb0500, type: 2}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: startingAttacks.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: startingAttacks.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: startingAttacks.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: startingAttacks.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: startingAttacks.Array.data[3]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: startingAttacks.Array.data[4]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483276863747773503, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
+      propertyPath: startingAttacks.Array.data[5]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5665352063901367233, guid: 015b507bc613d3c40b0cd5b121ccf1da, type: 3}
       propertyPath: m_IsActive
       value: 0

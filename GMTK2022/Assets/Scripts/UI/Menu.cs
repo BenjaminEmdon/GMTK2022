@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
    
     private const string mainMenuSceneName = "MainMenu";
     [SerializeField] private PlayerData playerData;
+    public EPlayerAttacks.Attacks[] startingAttacks;
    
 
     void Start()
@@ -16,6 +17,7 @@ public class Menu : MonoBehaviour
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName(mainMenuSceneName))
         {
               playerData.nextLevel = 1;
+              playerData.attackList = startingAttacks;
         }
         
    }

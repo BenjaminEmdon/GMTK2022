@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12066ee6b8cfff042a69a78c4bff56c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edf2bcd990ff6bd4a901ec7b36058076, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: fa295329ec1094c4093b6753dacb0500, type: 2}
+  startingAttacks: 
 --- !u!1 &1612068744
 GameObject:
   m_ObjectHideFlags: 0

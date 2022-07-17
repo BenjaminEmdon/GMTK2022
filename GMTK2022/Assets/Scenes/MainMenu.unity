@@ -473,7 +473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cc75b5bc83bdbc545996977010b115ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 810ad788d9ddf78449fc01fe707bb901, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: fa295329ec1094c4093b6753dacb0500, type: 2}
+  startingAttacks: 010000000100000003000000060000000200000002000000
 --- !u!114 &1157091061
 MonoBehaviour:
   m_ObjectHideFlags: 0
