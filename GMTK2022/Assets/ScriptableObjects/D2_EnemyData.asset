@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aba2d96ba497b64ebedf5e10cf53634, type: 3}
   m_Name: D2_EnemyData
   m_EditorClassIdentifier: 
-  enemyAttackList: 0600000005000000
+  enemyAttackList: 0600000001000000
