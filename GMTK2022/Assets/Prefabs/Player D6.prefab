@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 433646566652669876}
   - component: {fileID: 6518322759419384859}
   - component: {fileID: 3993195948621435871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 8411190458341819706}
   - component: {fileID: 7925141640038749891}
   - component: {fileID: 2639057475005577051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 2275261377914615257}
   - component: {fileID: 3552073687173981717}
   - component: {fileID: 2966910465102838558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 5977430347483075599}
   - component: {fileID: 5894659486663451868}
   - component: {fileID: 2042175486231147435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player D6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,6 +398,9 @@ MonoBehaviour:
   playerAttackRef: {fileID: 0}
   playerRef: {fileID: 0}
   attackToUse: 0
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   hitProjectileData: {fileID: 11400000, guid: 621f2e21e58bb3b43b2ca0634b6103bc, type: 2}
 --- !u!54 &5894659486663451868
 Rigidbody:
@@ -441,7 +444,7 @@ GameObject:
   - component: {fileID: 5476724072039342405}
   - component: {fileID: 5722371058721007946}
   - component: {fileID: 1904805467188320266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +554,7 @@ GameObject:
   - component: {fileID: 6324375650810975802}
   - component: {fileID: 8910016523127368901}
   - component: {fileID: 2231678019652166183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +664,7 @@ GameObject:
   - component: {fileID: 820352014831749866}
   - component: {fileID: 7442602226701913602}
   - component: {fileID: 4084938248902713010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2430813628743846048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,6 +855,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5400730fe3ee32e4c9a8f7e65c7f16e3, type: 3}
       propertyPath: m_Name
       value: D6 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5400730fe3ee32e4c9a8f7e65c7f16e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5400730fe3ee32e4c9a8f7e65c7f16e3, type: 3}
