@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDice : MonoBehaviour
 {
@@ -149,6 +150,7 @@ public class PlayerDice : MonoBehaviour
             case EPlayerAttacks.Attacks.Bomb: print("Bomb");
                     break;
             case EPlayerAttacks.Attacks.Miss: print("Miss");
+                    SceneManager.LoadScene("DiceTrading");
                     break;
             default: print("Failed");
                      break;   

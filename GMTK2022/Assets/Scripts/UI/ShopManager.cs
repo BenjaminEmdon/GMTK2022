@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShopManager : MonoBehaviour
 {
@@ -116,5 +117,8 @@ public class ShopManager : MonoBehaviour
     
         }
         Debug.Log(newAttack);
+        
+        playerDice.nextLevel = playerDice.nextLevel + 1;
+        SceneManager.LoadScene("test");
     }
 }

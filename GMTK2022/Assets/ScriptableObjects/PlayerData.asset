@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c99f77016957f4993595bc0db96c0f, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  attackList: 010000000100000001000000010000000200000001000000
+  attackList: 010000000100000003000000060000000200000002000000
+  nextLevel: 2
