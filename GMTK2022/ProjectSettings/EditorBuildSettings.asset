@@ -8,12 +8,24 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/test.unity
     guid: bf1cf1bd94f8db843916cd6bf2347543
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2e9af27be2521e347b2e8a1a893b65c8
+  - enabled: 1
     path: Assets/Scenes/LevelOne.unity
     guid: f71827fe197bc074b8a68ee887dfbe74
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: 881807f54a4481e4586483ae847bd392
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: 44c1a97e7d5167f4ead6467954fdfeeb
+  - enabled: 1
+    path: Assets/Scenes/LevelFour.unity
+    guid: fb460288929fe8048acf3a9c0094e0dd
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -26,7 +38,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScreen.unity
     guid: fdf8d81f25972a24ea3047b340058852
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 2e9af27be2521e347b2e8a1a893b65c8
   m_configObjects: {}
