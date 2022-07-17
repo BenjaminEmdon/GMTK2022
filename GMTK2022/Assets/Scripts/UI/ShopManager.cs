@@ -119,6 +119,7 @@ public class ShopManager : MonoBehaviour
         Debug.Log(newAttack);
         
         playerDice.nextLevel = playerDice.nextLevel + 1;
-        SceneManager.LoadScene("test");
+        SceneManager.LoadScene("LevelOne");
+        //SceneManager.LoadScene(playerDice.nextLevel);
     }
 }
