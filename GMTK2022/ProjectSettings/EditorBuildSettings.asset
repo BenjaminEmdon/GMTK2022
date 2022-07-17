@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/test.unity
     guid: bf1cf1bd94f8db843916cd6bf2347543
   - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: 61703a67e2a262847a315a1357b5b878
+  - enabled: 1
     path: Assets/Scenes/DiceTrading.unity
     guid: 412ccda6182b1f747aa9bf1e2b2f72e3
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2e9af27be2521e347b2e8a1a893b65c8
   m_configObjects: {}

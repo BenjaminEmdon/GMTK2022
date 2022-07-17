@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   attackList: 010000000100000003000000060000000200000002000000
-  nextLevel: 2
+  nextLevel: 1
