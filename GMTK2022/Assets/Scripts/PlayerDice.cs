@@ -2,52 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
-public class PlayerDice : MonoBehaviour
+public class PlayerDice : Dye
 {
-    private int delayTime = 1;
-    private bool waitingToAttack;
-    private bool hasJustAttacked;
-    private bool IsMoving = false;
-    [SerializeField] private float speed;
-    private Rigidbody rigidBody;
-    [SerializeField] private GameObject[] diceFaces;
     public Material[] diceTextures;
-    public Material materialToAdd;
-    public PlayerAttack playerAttackRef;
-    public GameObject playerRef;
-    private int i = 0;
-    private EPlayerAttacks.Attacks attackToGive;
 
+    [HideInInspector]
+    public PlayerAttack playerAttack;
+    [HideInInspector]
     public EPlayerAttacks.Attacks attackToUse;
-
-    [SerializeField]
-    private LayerMask targetLayerMask;
 
     [Header("Projectile Data")]
     [SerializeField]
     private ProjectileData hitProjectileData;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
 
-        rigidBody = GetComponent<Rigidbody>();
 
         //get the players attack arsenal and set the dice sides to reflect which attacks the player has.
-        playerRef = GameObject.Find("Player");
-        playerAttackRef = playerRef.GetComponent<PlayerAttack>();
-        diceTextures = playerAttackRef.currentAttackTextures;
+        playerAttack = Player.player.GetComponent<PlayerAttack>();
+        diceTextures = playerAttack.currentAttackTextures;
 
-        foreach (GameObject Face in diceFaces)
+        Material materialToAdd = null;
+
+        for (int i = 0; i < diceFaces.Length; i++)
         {
-            //print(i);
-
-            attackToGive = playerAttackRef.currentAttacks[i];
-            Face.GetComponent<InitiateSide>().attack = attackToGive;
-            i++;
+            EPlayerAttacks.Attacks attackToGive = playerAttack.currentAttacks[i];
+            diceFaces[i].GetComponent<InitiateSide>().attack = attackToGive;
 
             switch (attackToGive)
             {
@@ -76,79 +65,35 @@ public class PlayerDice : MonoBehaviour
                 case EPlayerAttacks.Attacks.Miss:
                     materialToAdd = diceTextures[7];
                     break;
-                default: print("failed");
+                default:
+                    print("failed");
                     break;
             }
 
-            Face.GetComponent<Renderer>().material = materialToAdd;
-
+            diceFaces[i].GetComponent<Renderer>().material = materialToAdd;
         }
-
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         /*
         if (Input.GetKeyDown(KeyCode.H))
         {
             ATKHit();
         }
         */
-
-        speed = rigidBody.velocity.magnitude;
-        if (speed == 0)
-        {
-            IsMoving = false;
-            foreach (GameObject Face in diceFaces)
-            {
-                Face.GetComponent<BoxCollider>().enabled = true;
-            }
-        }
-        else
-        {
-            IsMoving = true;
-            foreach (GameObject Face in diceFaces)
-            {
-                Face.GetComponent<BoxCollider>().enabled = false;
-            }
-            hasJustAttacked = false;
-        }
-
-        if (IsMoving == false)
-        {
-            if (hasJustAttacked == false)
-            {
-
-                if (waitingToAttack == false)
-                {
-
-                    Debug.Log("Waiting");
-                    StartCoroutine(DelayAction(delayTime));
-                }
-
-
-            }
-
-        }
     }
 
-    IEnumerator DelayAction(int delayTime)
+    protected override void FaceAbility()
     {
-        waitingToAttack = true;
-        yield return new WaitForSeconds(delayTime);
-        PerformAttack();
-        waitingToAttack = false;
-        hasJustAttacked = true;
-    }
+        base.FaceAbility();
 
-    void PerformAttack()
-    {
-        //check which direction is facing up and change enum to that
-        //Debug.Log("hi");
+        //Debug.Log($"We're now performing FaceAbility: {attackToUse}", this);
 
-        Debug.Log($"We're now performing attack: {attackToUse}", this);
-
+        // Perform the face ability that is currently facing up
         switch (attackToUse)
         {
             case EPlayerAttacks.Attacks.Hit:

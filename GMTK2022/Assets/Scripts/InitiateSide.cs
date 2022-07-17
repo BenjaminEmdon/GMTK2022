@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class InitiateSide : MonoBehaviour
 {
-  public Material materialApplied;
-  private GameObject FaceDetectorRef;
-  private BoxCollider FaceBox;
-  private BoxCollider SelfCollider;
-  private GameObject PlayerD6Ref;
-  private PlayerDice PlayerDiceRef;
-  [SerializeField] public EPlayerAttacks.Attacks attack;
+    public Material materialApplied;
+    private GameObject FaceDetectorRef;
+    private BoxCollider FaceBox;
+    private BoxCollider SelfCollider;
+    private GameObject PlayerD6Ref;
+    private PlayerDice PlayerDiceRef;
+    [SerializeField] public EPlayerAttacks.Attacks attack;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,17 +26,16 @@ public class InitiateSide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-    
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other == FaceBox)
+        if (other == FaceBox)
         {
             PlayerDiceRef.attackToUse = attack;
         }
-    
+
     }
 }
-
