@@ -116,6 +116,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1163222652208071699, guid: 6fd2a212d4857a94aa677a95d0c3bff8, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: ad8afa32710432c47b895d6915ca2cf6, type: 2}
+    - target: {fileID: 7811243521037671840, guid: 6fd2a212d4857a94aa677a95d0c3bff8, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811243521037671840, guid: 6fd2a212d4857a94aa677a95d0c3bff8, type: 3}
+      propertyPath: overrideMaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9023046375123689499, guid: 6fd2a212d4857a94aa677a95d0c3bff8, type: 3}
       propertyPath: m_Name
       value: Enemy_D2_Coin

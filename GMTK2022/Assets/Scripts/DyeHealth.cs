@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class DyeHealth : Health
 {
+    [SerializeField]
+    private EnemyDye dye;
+    
     protected override void Awake()
     {
-        // Set max health equal to sum of sides
-        //SetMaxHealth();
+        SetMaxHealth(dye.data.maxHealth);
+        base.Awake();
     }
 }

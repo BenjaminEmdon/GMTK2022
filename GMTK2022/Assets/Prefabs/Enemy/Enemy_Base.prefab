@@ -81,6 +81,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  dye: {fileID: 1163222652208071699}
 --- !u!114 &1163222652208071699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,3 +94,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854275afad6a3ac4e906bbc741628123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-   
     public Material[] currentAttackTextures;
     public EPlayerAttacks.Attacks[] currentAttacks;
+    public PlayerData data;
 
-    public PlayerData playerDice;
     // Start is called before the first frame update
     void Start()
     {
-        currentAttacks = playerDice.attackList;
+        currentAttacks = data.attackList;
     }
 
     // Update is called once per frame
@@ -20,6 +19,4 @@ public class PlayerAttack : MonoBehaviour
     {
       
     }
-
-   
 }

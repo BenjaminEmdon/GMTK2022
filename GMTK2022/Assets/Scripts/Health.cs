@@ -8,7 +8,6 @@ public class Health : MonoBehaviour
     protected int health = 10;
     public int GetHealth() { return health; }
 
-    [SerializeField]
     protected int maxHealth = 10;
     public int GetMaxHealth() { return maxHealth; }
 
