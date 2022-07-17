@@ -50,3 +50,6 @@ MonoBehaviour:
   - tag: Player Hit Projectile
     obj: {fileID: 147151778634400087, guid: eb3ed4af7d24e1d4089d27d506bc86f8, type: 3}
     size: 20
+  - tag: Enemy Projectile
+    obj: {fileID: 3798218565129383045, guid: 9b6cff4e5ff820049aa08eeaa97d5e07, type: 3}
+    size: 40

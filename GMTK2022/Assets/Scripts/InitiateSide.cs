@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class InitiateSide : MonoBehaviour
 {
-    public Material materialApplied;
-    private GameObject FaceDetectorRef;
-    private BoxCollider FaceBox;
-    private BoxCollider SelfCollider;
-    private GameObject PlayerD6Ref;
-    private PlayerDye PlayerDiceRef;
-    [SerializeField] public EPlayerAttacks.Attacks attack;
+    private GameObject FaceBox;
+
+    [SerializeField]
+    private Dye dye;
+
+    public EPlayerAttacks.Attacks playerAttack;
+    public EEnemyAttacks.enemyAttacks enemyAttack;
+
     // Start is called before the first frame update
     void Start()
     {
-        PlayerD6Ref = GameObject.Find("Player D6");
-        PlayerDiceRef = PlayerD6Ref.GetComponent<PlayerDye>();
-
-        FaceDetectorRef = GameObject.Find("PlayerFaceDetector");
-        FaceBox = FaceDetectorRef.GetComponent<BoxCollider>();
-
-        SelfCollider = GetComponent<BoxCollider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
+        FaceBox = GameObject.Find("PlayerFaceDetector");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == FaceBox)
+        if (other.gameObject == FaceBox)
         {
-            PlayerDiceRef.attackToUse = attack;
+            PlayerDye playerDye = dye as PlayerDye;
+            if (playerDye != null)
+            {
+                playerDye.attackToUse = playerAttack;
+            }
+            else
+            {
+                EnemyDye enemyDye = dye as EnemyDye;
+                if (enemyDye != null)
+                {
+                    enemyDye.attack = enemyAttack;
+                }
+            }
         }
-
     }
 }

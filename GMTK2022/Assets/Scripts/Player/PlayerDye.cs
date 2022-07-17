@@ -26,7 +26,6 @@ public class PlayerDye : Dye
     {
         base.Start();
 
-
         //get the players attack arsenal and set the dice sides to reflect which attacks the player has.
         playerAttack = Player.player.GetComponent<PlayerAttack>();
         diceTextures = playerAttack.currentAttackTextures;
@@ -36,11 +35,10 @@ public class PlayerDye : Dye
         for (int i = 0; i < diceFaces.Length; i++)
         {
             EPlayerAttacks.Attacks attackToGive = playerAttack.currentAttacks[i];
-            diceFaces[i].GetComponent<InitiateSide>().attack = attackToGive;
+            diceFaces[i].GetComponent<InitiateSide>().playerAttack = attackToGive;
 
             switch (attackToGive)
             {
-
                 case EPlayerAttacks.Attacks.Hit:
                     materialToAdd = diceTextures[0];
                     break;
@@ -143,8 +141,6 @@ public class PlayerDye : Dye
             else
                 dir = (closestObj.transform.position - proj.transform.position).normalized;
 
-
-
             // set variables from ProjectileData scriptable object
             projMvm.Initialise(hitProjectileData, dir);
         }
@@ -182,7 +178,7 @@ public class PlayerDye : Dye
 
     void ATKMiss()
     {
-        SceneManager.LoadScene("DiceTrading");
+        //SceneManager.LoadScene("DiceTrading");
     }
 }
 

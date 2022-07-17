@@ -11,6 +11,7 @@ public class EnemyData : ScriptableObject
 
     [Header("Face Ability Settings")]
     public EEnemyAttacks.enemyAttacks[] enemyAttackList;
+    public float fireInterval = 0.2f;
 
     [Header("Movement Settings")]
     [Tooltip("The magnitude at which this enemy should fling itself. Higher = more powerful flinging.")]

@@ -64,4 +64,43 @@ public class Dye : MonoBehaviour
         FaceAbility();
         waitingToPerformAbility = false;
     }
+
+    protected virtual void Fire(ProjectileData data, Vector3 dir)
+    {
+        GameObject proj = ObjectPooler.s_Instance.SpawnObjectFromPool(data.poolTag);
+        proj.transform.position = transform.position;
+
+        ProjectileMovement projMvm = proj.GetComponent<ProjectileMovement>();
+        if (projMvm != null)
+        {
+            projMvm.Initialise(data, dir);
+        }
+    }
+
+    protected virtual void FireRandomDir(ProjectileData data)
+    {
+        Fire(data, new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)));
+    }
+
+    protected virtual void FireConsecutive(ProjectileData data, Vector3 dir, int amount, float interval)
+    {
+        StartCoroutine(DelayFire(data, dir, amount, interval, false));
+    }
+
+    protected virtual void FireConsecutiveRandomDir(ProjectileData data, int amount, float interval)
+    {
+        StartCoroutine(DelayFire(data, Vector3.zero, amount, interval, true));
+    }
+
+    protected virtual IEnumerator DelayFire(ProjectileData data, Vector3 dir, int amount, float interval, bool randomDir = false)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            if (randomDir)
+                FireRandomDir(data);
+            else
+                Fire(data, dir);
+            yield return new WaitForSeconds(interval);
+        }
+    }
 }
