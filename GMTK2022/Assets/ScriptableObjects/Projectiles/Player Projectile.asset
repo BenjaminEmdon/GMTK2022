@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6801a91d264309745a7929480245a54e, type: 3}
   m_Name: Player Projectile
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  poolTag: Player Hit Projectile
   damage: 1
   healAmount: 0
   speed: 30
