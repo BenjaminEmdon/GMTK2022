@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DyeHealth : Health
+public class EnemyHealth : Health
 {
     [SerializeField]
     private EnemyDye dye;
