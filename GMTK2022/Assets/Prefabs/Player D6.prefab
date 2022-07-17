@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialApplied: {fileID: 0}
+  attack: 0
 --- !u!1 &2234532418497814975
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialApplied: {fileID: 0}
+  attack: 0
 --- !u!1 &2309779894391319131
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialApplied: {fileID: 0}
+  attack: 0
 --- !u!1 &3248487310564752031
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +397,8 @@ MonoBehaviour:
   materialToAdd: {fileID: 0}
   playerAttackRef: {fileID: 0}
   playerRef: {fileID: 0}
+  attackToUse: 0
+  hitProjectileData: {fileID: 11400000, guid: 621f2e21e58bb3b43b2ca0634b6103bc, type: 2}
 --- !u!54 &5894659486663451868
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -528,6 +536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialApplied: {fileID: 0}
+  attack: 0
 --- !u!1 &5512251372717653345
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialApplied: {fileID: 0}
+  attack: 0
 --- !u!1 &6108974594425177165
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f559ef3a3339d894592614f7b6c11040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialApplied: {fileID: 0}
+  attack: 0
 --- !u!1 &7034246987143604902
 GameObject:
   m_ObjectHideFlags: 0

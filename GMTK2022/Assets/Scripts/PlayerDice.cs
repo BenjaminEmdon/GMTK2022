@@ -182,7 +182,7 @@ public class PlayerDice : MonoBehaviour
             //Vector3 dir = 
 
             // set variables from ProjectileData scriptable object
-            //projMvm.Initialise(hitProjectileData.damage, dir, hitProjectileData.speed, hitProjectileData.lifespan);
+            projMvm.Initialise(hitProjectileData.damage, Vector3.left, hitProjectileData.speed, hitProjectileData.lifespan, hitProjectileData.collisionLayers);
         }
     }
 
@@ -220,6 +220,13 @@ public class PlayerDice : MonoBehaviour
     {
         SceneManager.LoadScene("DiceTrading");
     }
+
+    /*
+    private GameObject FindNearestEnemy()
+    {
+
+    }
+    */
 }
 
  
