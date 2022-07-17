@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aba2d96ba497b64ebedf5e10cf53634, type: 3}
   m_Name: D6_EnemyData
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 6
   enemyAttackList: 1a0000000700000001000000090000000a00000002000000
-  flingMagnitude: 30
+  flingMagnitude: 300
+  flingDirOffset: {x: 0, y: 0.4, z: 0}
+  flingTorqueMagnitude: 9000

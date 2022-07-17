@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aba2d96ba497b64ebedf5e10cf53634, type: 3}
   m_Name: D8_EnemyData
   m_EditorClassIdentifier: 
+  maxHealth: 8
   enemyAttackList: 1a0000000700000008000000020000000a0000000b0000000c00000004000000
+  flingMagnitude: 0
+  flingDirOffset: {x: 0, y: 0, z: 0}
+  flingTorqueMagnitude: 0

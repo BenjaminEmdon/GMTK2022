@@ -134,8 +134,16 @@ public class PlayerDye : Dye
         ProjectileMovement projMvm = proj.GetComponent<ProjectileMovement>();
         if (projMvm != null)
         {
+            Vector3 dir;
+            GameObject closestObj = FindClosestObject.Find(proj.transform.position, 50.0f, targetLayerMask);
+
             // calculate direction to nearest enemy
-            Vector3 dir = (FindClosestObject.Find(proj.transform.position, 50.0f, targetLayerMask).transform.position - proj.transform.position).normalized;
+            if (closestObj == null)
+                dir = Vector3.forward;
+            else
+                dir = (closestObj.transform.position - proj.transform.position).normalized;
+
+
 
             // set variables from ProjectileData scriptable object
             projMvm.Initialise(hitProjectileData, dir);
