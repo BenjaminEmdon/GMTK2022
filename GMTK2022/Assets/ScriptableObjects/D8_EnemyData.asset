@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: D8_EnemyData
   m_EditorClassIdentifier: 
   maxHealth: 8
-  enemyAttackList: 1a0000000700000008000000020000000a0000000b0000000c00000004000000
+  enemyAttackList: 060000000700000008000000090000000a0000000b0000000c0000000d000000
+  fireInterval: 0
   flingMagnitude: 0
   flingDirOffset: {x: 0, y: 0, z: 0}
   flingTorqueMagnitude: 0
