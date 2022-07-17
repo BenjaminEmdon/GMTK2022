@@ -14,7 +14,13 @@ public class HUDManager : MonoBehaviour
     public PlayerDye playerRef;
     public Sprite[] playerSprites;
     public EEnemyAttacks.enemyAttacks attackUsed;
-   
+    private Image[] healthImages;
+
+    [SerializeField]
+    private GameObject healthGrid;
+    [SerializeField]
+    private GameObject healthPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,12 +47,20 @@ public class HUDManager : MonoBehaviour
 
         BossRollSprite.GetComponent<Image>().sprite = diceRolls[0];
 
+        InstantiateHealthImages();
+        UpdatePlayerHealth(Player.player.health.GetHealth());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        Player.player.health.onHealthValueChanged.AddListener(UpdatePlayerHealth);
+        Player.player.health.onMaxHealthValueChanged.AddListener(UpdatePlayerHealth);
+    }
+
+    private void OnDisable()
+    {
+        Player.player.health.onHealthValueChanged.RemoveListener(UpdatePlayerHealth);
+        Player.player.health.onMaxHealthValueChanged.RemoveListener(UpdatePlayerHealth);
     }
 
     void updatePlayerRoll()
@@ -243,14 +257,35 @@ public class HUDManager : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-    void updatePlayerHealth()
+    private void UpdatePlayerHealth(int value)
     {
+        if (healthImages.Length != Player.player.health.GetMaxHealth())
+        {
+            InstantiateHealthImages();
+        }
 
+        for (int i = 0; i < value; i++)
+        {
+            healthImages[i].enabled = true;
+        }
+        for (int i = value; i < Player.player.health.GetMaxHealth(); i++)
+        {
+            healthImages[i].enabled = false;
+        }
+    }
+
+    private void InstantiateHealthImages()
+    {
+        foreach (Transform child in healthGrid.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        healthImages = new Image[Player.player.health.GetMaxHealth()];
+        for (int i = 0; i < healthImages.Length; i++)
+        {
+            healthImages[i] = Instantiate(healthPrefab, healthGrid.transform).GetComponent<Image>();
+            healthImages[i].gameObject.name = $"{healthPrefab.name} [{i + 1}]";
+        }
     }
 }
