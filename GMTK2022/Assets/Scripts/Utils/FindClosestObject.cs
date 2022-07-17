@@ -12,6 +12,10 @@ public class FindClosestObject
     public static GameObject Find(Vector3 origin, float radius, LayerMask layers)
     {
         Collider[] colliders = Physics.OverlapSphere(origin, radius, layers);
+
+        if (colliders.Length <= 0)
+            return null;
+
         List<KeyValuePair<Collider, float>> objDistances = new List<KeyValuePair<Collider, float>>();
         for (int i = 0; i < colliders.Length; i++)
         {

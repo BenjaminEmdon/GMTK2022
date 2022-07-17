@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Projectiles/Generic Projectile", fileName = "New Projectile")]
 public class ProjectileData : ScriptableObject
 {
-    public GameObject prefab;
+    public string poolTag;
     public int damage = 1;
     public int healAmount = 1;
     public float speed = 10.0f;
@@ -31,9 +31,9 @@ public class ProjectileData : ScriptableObject
     }
 
     // Constructor
-    public ProjectileData(GameObject _prefab, int _damage, float _speed, float _lifespan, CollisionInfo[] _collisionInfo)
+    public ProjectileData(string _poolTag, int _damage, float _speed, float _lifespan, CollisionInfo[] _collisionInfo)
     {
-        prefab = _prefab;
+        poolTag = _poolTag;
         damage = _damage;
         speed = _speed;
         lifespan = _lifespan;

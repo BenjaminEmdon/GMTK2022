@@ -164,7 +164,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: eedbd107c60f049438fd26d782aa2100, type: 2}
   - {fileID: 2100000, guid: 5076630f76ec63040960b40a744099b1, type: 2}
   currentAttacks: 010000000100000006000000030000000200000002000000
-  playerDice: {fileID: 11400000, guid: fa295329ec1094c4093b6753dacb0500, type: 2}
+  data: {fileID: 11400000, guid: fa295329ec1094c4093b6753dacb0500, type: 2}
 --- !u!114 &149869339325780771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4415fc861c44d8a4eb9482be276ec445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
   actionOnDeath: 0
   onTakeDamage:
     m_PersistentCalls:
@@ -197,3 +196,4 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  playerAttack: {fileID: 8910112296478276008}

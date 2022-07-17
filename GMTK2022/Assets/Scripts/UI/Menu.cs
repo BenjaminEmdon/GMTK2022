@@ -28,6 +28,7 @@ public class Menu : MonoBehaviour
    
     public void QuitToMainMenu()
     {
+        PauseManager.Unpause();
         SceneManager.LoadScene(mainMenuSceneName);
     }
 

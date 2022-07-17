@@ -9,13 +9,13 @@ public class InitiateSide : MonoBehaviour
     private BoxCollider FaceBox;
     private BoxCollider SelfCollider;
     private GameObject PlayerD6Ref;
-    private PlayerDice PlayerDiceRef;
+    private PlayerDye PlayerDiceRef;
     [SerializeField] public EPlayerAttacks.Attacks attack;
     // Start is called before the first frame update
     void Start()
     {
         PlayerD6Ref = GameObject.Find("Player D6");
-        PlayerDiceRef = PlayerD6Ref.GetComponent<PlayerDice>();
+        PlayerDiceRef = PlayerD6Ref.GetComponent<PlayerDye>();
 
         FaceDetectorRef = GameObject.Find("PlayerFaceDetector");
         FaceBox = FaceDetectorRef.GetComponent<BoxCollider>();

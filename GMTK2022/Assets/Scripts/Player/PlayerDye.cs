@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerDice : Dye
+public class PlayerDye : Dye
 {
     public Material[] diceTextures;
 
@@ -128,7 +128,7 @@ public class PlayerDice : Dye
 
     void ATKHit()
     {
-        GameObject proj = ObjectPooler.s_Instance.SpawnObjectFromPool("Player Hit Projectile");
+        GameObject proj = ObjectPooler.s_Instance.SpawnObjectFromPool(hitProjectileData.poolTag);
         proj.transform.position = transform.position;
 
         ProjectileMovement projMvm = proj.GetComponent<ProjectileMovement>();
