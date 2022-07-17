@@ -13,6 +13,7 @@ public class HUDManager : MonoBehaviour
     public DiceUIDataBase spriteList;
     public PlayerDye playerRef;
     public Sprite[] playerSprites;
+    public EEnemyAttacks.enemyAttacks attackUsed;
    
     // Start is called before the first frame update
     void Start()
@@ -79,5 +80,177 @@ public class HUDManager : MonoBehaviour
             default: print("failed");
                      break;
         }
+    }
+
+    void updateBossRoll()
+    {
+        switch(LevelManager.GetComponent<LevelManager>().levelNumber)
+        {
+            case 4: updateD20Roll();
+                    break;
+            case 3: updateD8Roll();
+                    break;
+            case 2: updateD6Roll();
+                    break;
+            case 1: updateD2Roll();
+                    break;
+            default:
+                    break;
+        }
+
+
+    }
+
+    void updateD2Roll()
+    {
+        switch(attackUsed)
+        {
+            case EEnemyAttacks.enemyAttacks.One:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[1];
+                break;
+            case EEnemyAttacks.enemyAttacks.Two:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[2];
+                break;
+            default:
+            break;
+        }
+    }
+
+    void updateD6Roll()
+    {
+        switch(attackUsed)
+        {
+            case EEnemyAttacks.enemyAttacks.One:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[1];
+                break;
+            case EEnemyAttacks.enemyAttacks.Two:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[2];
+                break;
+            case EEnemyAttacks.enemyAttacks.Three:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[3];
+                break;
+            case EEnemyAttacks.enemyAttacks.Four:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[4];
+                break;
+            case EEnemyAttacks.enemyAttacks.Five:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[5];
+                break;
+            case EEnemyAttacks.enemyAttacks.Six:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[6];
+                break;
+            default:
+            break;
+        }
+    }
+     void updateD8Roll()
+    {
+        switch(attackUsed)
+        {
+            case EEnemyAttacks.enemyAttacks.One:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[1];
+                break;
+            case EEnemyAttacks.enemyAttacks.Two:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[2];
+                break;
+            case EEnemyAttacks.enemyAttacks.Three:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[3];
+                break;
+            case EEnemyAttacks.enemyAttacks.Four:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[4];
+                break;
+            case EEnemyAttacks.enemyAttacks.Five:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[5];
+                break;
+            case EEnemyAttacks.enemyAttacks.Six:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[6];
+                break;
+             case EEnemyAttacks.enemyAttacks.Seven:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[7];
+                break;
+             case EEnemyAttacks.enemyAttacks.Eight:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[8];
+                break;
+            default:
+            break;
+        }
+    }
+     void updateD20Roll()
+    {
+        switch(attackUsed)
+        {
+            case EEnemyAttacks.enemyAttacks.One:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[1];
+                break;
+            case EEnemyAttacks.enemyAttacks.Two:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[2];
+                break;
+            case EEnemyAttacks.enemyAttacks.Three:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[3];
+                break;
+            case EEnemyAttacks.enemyAttacks.Four:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[4];
+                break;
+            case EEnemyAttacks.enemyAttacks.Five:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[5];
+                break;
+            case EEnemyAttacks.enemyAttacks.Six:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[6];
+                break;
+             case EEnemyAttacks.enemyAttacks.Seven:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[7];
+                break;
+             case EEnemyAttacks.enemyAttacks.Eight:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[8];
+                break;
+            case EEnemyAttacks.enemyAttacks.Nine:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[9];
+                break;
+            case EEnemyAttacks.enemyAttacks.Ten:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[10];
+                break;
+            case EEnemyAttacks.enemyAttacks.Eleven:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[11];
+                break;
+            case EEnemyAttacks.enemyAttacks.Twelve:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[12];
+                break;
+            case EEnemyAttacks.enemyAttacks.Thirteen:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[13];
+                break;
+            case EEnemyAttacks.enemyAttacks.Fourteen:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[14];
+                break;
+             case EEnemyAttacks.enemyAttacks.Fifteen:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[15];
+                break;
+             case EEnemyAttacks.enemyAttacks.Sixteen:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[16];
+                break;
+            case EEnemyAttacks.enemyAttacks.Seventeen:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[17];
+                break;
+            case EEnemyAttacks.enemyAttacks.Eighteen:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[18];
+                break;
+             case EEnemyAttacks.enemyAttacks.Nineteen:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[19];
+                break;
+             case EEnemyAttacks.enemyAttacks.Twenty:
+                BossRollSprite.GetComponent<Image>().sprite = diceRolls[20];
+                break;
+            default:
+            break;
+        }
+    }
+
+
+
+
+
+
+
+    void updatePlayerHealth()
+    {
+
     }
 }
