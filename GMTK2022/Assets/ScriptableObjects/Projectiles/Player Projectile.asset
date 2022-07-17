@@ -14,8 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   damage: 1
+  healAmount: 0
   speed: 30
   lifespan: 5
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 128
+  collisionInfo:
+  - layerMask:
+      serializedVersion: 2
+      m_Bits: 128
+    actions: 17
+  - layerMask:
+      serializedVersion: 2
+      m_Bits: 1
+    actions: 16

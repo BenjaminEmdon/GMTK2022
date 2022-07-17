@@ -89,6 +89,13 @@ public class PlayerDice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ATKHit();
+        }
+        */
+
         speed = rigidBody.velocity.magnitude;
         if (speed == 0)
         {
@@ -186,7 +193,7 @@ public class PlayerDice : MonoBehaviour
             Vector3 dir = (FindClosestObject.Find(proj.transform.position, 50.0f, targetLayerMask).transform.position - proj.transform.position).normalized;
 
             // set variables from ProjectileData scriptable object
-            projMvm.Initialise(hitProjectileData.damage, dir, hitProjectileData.speed, hitProjectileData.lifespan, hitProjectileData.collisionLayers);
+            projMvm.Initialise(hitProjectileData, dir);
         }
     }
 
