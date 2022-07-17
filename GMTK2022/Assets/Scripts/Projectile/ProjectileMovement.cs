@@ -33,7 +33,12 @@ public class ProjectileMovement : MonoBehaviour, IPooledObject
         {
             if ((data.collisionInfo[i].layerMask.value & (1 << other.gameObject.layer)) > 0)
             {
+                // Try to find a Health component
                 Health health = other.GetComponent<Health>();
+                if (health == null)
+                    health = other.GetComponentInChildren<Health>();
+                if (health == null)
+                    health = other.GetComponentInParent<Health>();
 
                 if (health != null)
                 {
