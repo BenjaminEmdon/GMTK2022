@@ -8,7 +8,7 @@ public class ObjectPooler : MonoBehaviour
     public static ObjectPooler s_Instance;
 
     [Header("Pooled Obj Information")]
-    private List<GameObject> pooledObjs;
+    private List<GameObject> pooledObjs = new List<GameObject>();
     [SerializeField]
     private GameObject objToPool;
     [SerializeField]
@@ -25,13 +25,14 @@ public class ObjectPooler : MonoBehaviour
         {
             s_Instance = this;
         }
-    }
 
-    private void Start()
-    {
+        if (objToPool == null || poolSize <= 0)
+            return;
+
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject obj = Instantiate(objToPool);
+            GameObject obj = Instantiate(objToPool, transform);
+            obj.name = $"{objToPool.name} [{i + 1}]";
             obj.SetActive(false);
             pooledObjs.Add(obj);
         }

@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class ProjectileMovement : MonoBehaviour, IPooledObject
 {
+    [Header("Declarations")]
     [SerializeField]
     private Rigidbody rb;
 
-    [HideInInspector]
-    public float lifespan;
-    [HideInInspector]
-    public Vector3 dir = Vector3.zero;
-    [HideInInspector]
-    public float speed;
+    protected int damage;
+    protected Vector3 dir = Vector3.zero;
+    protected float speed;
+    protected float lifespan;
+
+    // basically a constructor which i think are p neat
+    // fuck you unity for not being able to use constructors on a monobehaviour >:(
+    public virtual void Initialise(int _damage, Vector3 _dir, float _speed, float _lifespan)
+    {
+        damage = _damage;
+        dir = _dir;
+        speed = _speed;
+        lifespan = _lifespan;
+    }
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
+        Death();
     }
 
     public virtual void OnObjectSpawn()

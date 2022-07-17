@@ -15,6 +15,17 @@ public class Health : MonoBehaviour
     private bool isAlive = true;
     public bool GetIsAlive() { return isAlive; }
 
+    enum ActionOnDeath
+    {
+        None,
+        Disable,
+        Destroy,
+        DestroyImmediate,
+    }
+
+    [SerializeField]
+    private ActionOnDeath actionOnDeath = ActionOnDeath.None;
+
     [Header("Events")]
     public UnityEvent<int> onTakeDamage;                // Passes damage taken
     public UnityEvent<int> onInjured;                   // Take damage but not dead. Passes damage taken.
@@ -79,5 +90,22 @@ public class Health : MonoBehaviour
     {
         isAlive = false;
         onDeath.Invoke();
+
+        switch (actionOnDeath)
+        {
+            case ActionOnDeath.None:
+                break;
+            case ActionOnDeath.Disable:
+                gameObject.SetActive(false);
+                break;
+            case ActionOnDeath.Destroy:
+                Destroy(gameObject);
+                break;
+            case ActionOnDeath.DestroyImmediate:
+                DestroyImmediate(gameObject);
+                break;
+            default:
+                break;
+        }
     }
 }

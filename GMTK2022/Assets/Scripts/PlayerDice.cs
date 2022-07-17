@@ -18,74 +18,78 @@ public class PlayerDice : MonoBehaviour
     public GameObject playerRef;
     private int i = 0;
     private EPlayerAttacks.Attacks attackToGive;
-    
+
     public EPlayerAttacks.Attacks attackToUse;
-    
-    
+
+    [Header("Projectile Data")]
+    [SerializeField]
+    private ProjectileData hitProjectileData;
+
+
     // Start is called before the first frame update
     void Start()
     {
-       
-       rigidBody = GetComponent<Rigidbody>();
 
-       //get the players attack arsenal and set the dice sides to reflect which attacks the player has.
-       playerRef = GameObject.Find("Player");
-       playerAttackRef = playerRef.GetComponent<PlayerAttack>();
-       diceTextures = playerAttackRef.currentAttackTextures;
+        rigidBody = GetComponent<Rigidbody>();
 
-       foreach (GameObject Face in diceFaces) 
-       {
-           //print(i);
-                     
-           attackToGive = playerAttackRef.currentAttacks[i];
-           Face.GetComponent<InitiateSide>().attack = attackToGive; 
-           i++;
+        //get the players attack arsenal and set the dice sides to reflect which attacks the player has.
+        playerRef = GameObject.Find("Player");
+        playerAttackRef = playerRef.GetComponent<PlayerAttack>();
+        diceTextures = playerAttackRef.currentAttackTextures;
 
-           switch(attackToGive)
-           {
-           
+        foreach (GameObject Face in diceFaces)
+        {
+            //print(i);
+
+            attackToGive = playerAttackRef.currentAttacks[i];
+            Face.GetComponent<InitiateSide>().attack = attackToGive;
+            i++;
+
+            switch (attackToGive)
+            {
+
                 case EPlayerAttacks.Attacks.Hit:
-                         materialToAdd = diceTextures[0];
-                         break;
+                    materialToAdd = diceTextures[0];
+                    break;
                 case EPlayerAttacks.Attacks.DoubleHit:
-                         materialToAdd = diceTextures[1];
-                         break;         
+                    materialToAdd = diceTextures[1];
+                    break;
                 case EPlayerAttacks.Attacks.TripleHit:
-                         materialToAdd = diceTextures[2];
-                         break;
+                    materialToAdd = diceTextures[2];
+                    break;
                 case EPlayerAttacks.Attacks.Heal:
-                         materialToAdd = diceTextures[3];
-                         break;
+                    materialToAdd = diceTextures[3];
+                    break;
                 case EPlayerAttacks.Attacks.HealTwice:
-                         materialToAdd = diceTextures[4];
-                         break;
+                    materialToAdd = diceTextures[4];
+                    break;
                 case EPlayerAttacks.Attacks.HealThrice:
-                         materialToAdd = diceTextures[5];
-                         break;
+                    materialToAdd = diceTextures[5];
+                    break;
                 case EPlayerAttacks.Attacks.Bomb:
-                         materialToAdd = diceTextures[6];
-                         break;
+                    materialToAdd = diceTextures[6];
+                    break;
                 case EPlayerAttacks.Attacks.Miss:
-                         materialToAdd = diceTextures[7];
-                         break;
+                    materialToAdd = diceTextures[7];
+                    break;
                 default: print("failed");
-                         break;
-           }
-           
-           Face.GetComponent<Renderer>().material = materialToAdd;
-           
-       }
-    
+                    break;
+            }
+
+            Face.GetComponent<Renderer>().material = materialToAdd;
+
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
         speed = rigidBody.velocity.magnitude;
-        if(speed == 0)
+        if (speed == 0)
         {
             IsMoving = false;
-            foreach (GameObject Face in diceFaces) 
+            foreach (GameObject Face in diceFaces)
             {
                 Face.GetComponent<BoxCollider>().enabled = true;
             }
@@ -93,27 +97,27 @@ public class PlayerDice : MonoBehaviour
         else
         {
             IsMoving = true;
-            foreach (GameObject Face in diceFaces) 
+            foreach (GameObject Face in diceFaces)
             {
                 Face.GetComponent<BoxCollider>().enabled = false;
             }
             hasJustAttacked = false;
         }
-        
-        if(IsMoving == false)
+
+        if (IsMoving == false)
         {
-           if(hasJustAttacked == false)
-           {
-              
-              if(waitingToAttack == false)
-              {
-                
-                Debug.Log("Waiting");
-                StartCoroutine(DelayAction(delayTime));
-              }
-              
-              
-           }
+            if (hasJustAttacked == false)
+            {
+
+                if (waitingToAttack == false)
+                {
+
+                    Debug.Log("Waiting");
+                    StartCoroutine(DelayAction(delayTime));
+                }
+
+
+            }
 
         }
     }
@@ -130,34 +134,92 @@ public class PlayerDice : MonoBehaviour
     void PerformAttack()
     {
         //check which direction is facing up and change enum to that
-        Debug.Log("hi");
-        
+        //Debug.Log("hi");
+
+        Debug.Log($"We're now performing attack: {attackToUse}", this);
+
         switch (attackToUse)
         {
-            
-            case EPlayerAttacks.Attacks.Hit: print("Hit");
-                    break;
-            case EPlayerAttacks.Attacks.DoubleHit: print("DoubleHit");
-                    break;
-            case EPlayerAttacks.Attacks.TripleHit: print("TripleHit");
-                    break;
-            case EPlayerAttacks.Attacks.Heal: print("Heal");
-                    break;
-            case EPlayerAttacks.Attacks.HealTwice: print("HealTwice");
-                    break;
-            case EPlayerAttacks.Attacks.HealThrice: print("HealThrice");
-                    break;
-            case EPlayerAttacks.Attacks.Bomb: print("Bomb");
-                    break;
-            case EPlayerAttacks.Attacks.Miss: print("Miss");
-                    SceneManager.LoadScene("DiceTrading");
-                    break;
-            default: print("Failed");
-                     break;   
+            case EPlayerAttacks.Attacks.Hit:
+                ATKHit();
+                break;
+            case EPlayerAttacks.Attacks.DoubleHit:
+                ATKDoubleHit();
+                break;
+            case EPlayerAttacks.Attacks.TripleHit:
+                ATKTripleHit();
+                break;
+            case EPlayerAttacks.Attacks.Heal:
+                ATKHeal();
+                break;
+            case EPlayerAttacks.Attacks.HealTwice:
+                ATKDoubleHeal();
+                break;
+            case EPlayerAttacks.Attacks.HealThrice:
+                ATKTripleHeal();
+                break;
+            case EPlayerAttacks.Attacks.Bomb:
+                ATKBomb();
+                break;
+            case EPlayerAttacks.Attacks.Miss:
+                ATKMiss();
+                break;
+            default:
+                Debug.LogError("PerformAttack failed - no attack to use.");
+                break;
         }
     }
 
+    void ATKHit()
+    {
+        GameObject proj = ObjectPooler.s_Instance.SpawnObjectFromPool();
+        proj.transform.position = transform.position;
 
+        ProjectileMovement projMvm = proj.GetComponent<ProjectileMovement>();
+        if (projMvm != null)
+        {
+            // calculate direction to nearest enemy
+            //Vector3 dir = 
+
+            // set variables from ProjectileData scriptable object
+            //projMvm.Initialise(hitProjectileData.damage, dir, hitProjectileData.speed, hitProjectileData.lifespan);
+        }
+    }
+
+    void ATKDoubleHit()
+    {
+
+    }
+
+    void ATKTripleHit()
+    {
+
+    }
+
+    void ATKHeal()
+    {
+
+    }
+
+    void ATKDoubleHeal()
+    {
+
+    }
+
+    void ATKTripleHeal()
+    {
+
+    }
+
+    void ATKBomb()
+    {
+
+    }
+
+    void ATKMiss()
+    {
+        SceneManager.LoadScene("DiceTrading");
+    }
 }
 
  
